@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kismath — Arabic-fusion catering for unforgettable events. Experience the taste of tradition." />
+  <meta name="theme-color" content="#5C1010" />
+  <title>Kismath — Arabic Fusion Catering</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Naskh+Arabic:wght@500;700&family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo" aria-label="Kismath Catering — home">
+        <img src="images/logo-dark1.png" alt="Kismath Catering" class="logo-img" />
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Book Now</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero cream-deco" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">A Taste of Heritage</p>
+      <h1 class="hero-title">
+        Experience the<br/>
+        <span class="gold">Taste of Tradition</span>
+      </h1>
+      <p class="hero-sub">
+        Authentic Arabic fusion cuisine, hand-crafted for weddings, corporate gatherings, and intimate celebrations.
+      </p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn btn-ghost">Book Catering</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about cream-deco cream-deco-2" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Where Tradition Meets the Modern Table</h2>
+        <p class="about-lead">
+          Born from generations of family recipes and the warm hospitality of the Levant, Kismath brings the soul of Arabic cuisine to every plate we serve.
+        </p>
+        <p class="about-body">
+          From the sizzle of charcoal grills to the slow simmer of fragrant stews, every dish is prepared with imported spices, locally-sourced produce, and a chef's eye for detail. We don't just cater meals — we craft experiences your guests will remember long after the last bite.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Events Catered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Signature Dishes</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Years of Craft</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=70" alt="Chef plating an Arabic dish" />
+          <div class="about-badge" lang="ar" dir="rtl">أصيل · فاخر</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU / SPECIALTIES ============ -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Curated Menu</p>
+        <h2 class="section-title light">Our Specialties</h2>
+        <p class="section-sub">Our signature dishes — the heart and soul of Kismath.</p>
+      </div>
+
+      <!-- ★ SIGNATURE DISHES HIGHLIGHT ★ -->
+      <div class="signature-row">
+        <article class="signature-card" data-category="main">
+          <div class="signature-img-wrap">
+            <img loading="lazy" src="images/menu/mashkool_rice.jpg" alt="Mashkool Rice" />
+            <span class="signature-badge">★ Signature</span>
+          </div>
+          <div class="signature-info">
+            <h3>Mashkool Rice</h3>
+            <p>Traditional Arabic saffron rice with nuts & raisins</p>
+          </div>
+        </article>
+        <article class="signature-card" data-category="main">
+          <div class="signature-img-wrap">
+            <img loading="lazy" src="images/menu/chicken_biriyani.jpg" alt="Chicken Biriyani" />
+            <span class="signature-badge">★ Signature</span>
+          </div>
+          <div class="signature-info">
+            <h3>Chicken Biriyani</h3>
+            <p>Authentic Kerala Malabar biriyani with raita</p>
+          </div>
+        </article>
+        <article class="signature-card" data-category="main">
+          <div class="signature-img-wrap">
+            <img loading="lazy" src="images/menu/mutton_fry_kerala_nadan.jpg" alt="Mutton Fry" />
+            <span class="signature-badge">★ Signature</span>
+          </div>
+          <div class="signature-info">
+            <h3>Mutton Fry</h3>
+            <p>Kerala Nadan dry-roasted mutton with curry leaves</p>
+          </div>
+        </article>
+        <article class="signature-card" data-category="main">
+          <div class="signature-img-wrap">
+            <img loading="lazy" src="images/menu/beef_fry_kerala_ularthiyathu.jpg" alt="Beef Fry" />
+            <span class="signature-badge">★ Signature</span>
+          </div>
+          <div class="signature-info">
+            <h3>Beef Fry</h3>
+            <p>Kerala beef ularthiyathu with coconut slices</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-header" style="margin-top:60px;">
+        <p class="section-eyebrow">Explore</p>
+        <h2 class="section-title light">Full Menu Categories</h2>
+        <p class="section-sub">Six categories. Endless flavour. Each curated for a different moment of your celebration.</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <article class="menu-card" data-category="healthy" role="button" tabindex="0" aria-label="View Healthy Meals menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/greek_salad.jpg" alt="Healthy salad bowl" />
+            <span class="menu-icon" aria-hidden="true">🥗</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Healthy Meals</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">وجبات صحية</p>
+            <p class="menu-card-desc">Vibrant salads, fresh greens and lean proteins — nourishing and beautifully plated.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="soups" role="button" tabindex="0" aria-label="View Soups menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/lentil_soup.jpg" alt="Bowl of soup" />
+            <span class="menu-icon" aria-hidden="true">🍲</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Soups</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">شوربات</p>
+            <p class="menu-card-desc">Slow-simmered lentil, broths and creamy classics — comfort in every spoonful.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="main" role="button" tabindex="0" aria-label="View Main Course menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/chicken_biriyani.jpg" alt="Kerala Malabar Biriyani" />
+            <span class="menu-icon" aria-hidden="true">🍛</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Main Course</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">الأطباق الرئيسية</p>
+            <p class="menu-card-desc">Mashkool rice, biriyani, Kerala fries, pastas and herb-roasted mains.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="grills" role="button" tabindex="0" aria-label="View Grills menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/steaks.jpg" alt="Grilled steaks" />
+            <span class="menu-icon" aria-hidden="true">🔥</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Grills</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">المشويات</p>
+            <p class="menu-card-desc">Charcoal-kissed steaks, shish tawook and lamb chops with house marinades.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="beverages" role="button" tabindex="0" aria-label="View Tea and Coffee menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/karak_tea.jpg" alt="Karak tea" />
+            <span class="menu-icon" aria-hidden="true">☕</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Tea & Coffee</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">شاي وقهوة</p>
+            <p class="menu-card-desc">Green tea, karak, herbal infusions and freshly brewed coffees.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="snacks" role="button" tabindex="0" aria-label="View Snacks menu">
+          <div class="menu-card-img">
+            <img loading="lazy" src="images/menu/veggies_hummus.jpg" alt="Veggies and hummus" />
+            <span class="menu-icon" aria-hidden="true">🥪</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Snacks</h3>
+            <p class="menu-card-ar" lang="ar" dir="rtl">المقبلات</p>
+            <p class="menu-card-desc">Popcorns, hummus platters, mini burgers and sweet treats — perfect for tea hours.</p>
+            <span class="menu-card-link">View dishes →</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="why cream-deco">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow light">Why Kismath</p>
+        <h2 class="section-title light">A Standard of Excellence</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 7 6 11 6 14a6 6 0 0012 0c0-3-2-7-6-12z"/></svg>
+          </div>
+          <h3>Fresh Ingredients</h3>
+          <p>Sourced daily from trusted farms and traditional spice merchants.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 14V8a6 6 0 0112 0v6"/><path d="M4 14h16l-1 7H5z"/></svg>
+          </div>
+          <h3>Expert Chefs</h3>
+          <p>Decades of culinary mastery from across the Levant and Gulf.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>Timely Delivery</h3>
+          <p>On-the-dot service so your event flows without a single pause.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18l-2 13H5z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+          </div>
+          <h3>Custom Catering</h3>
+          <p>Tailored menus that reflect your taste, theme and guest count.</p>
+        </div>
+      </div>
+
+      <div class="why-stats">
+        <div class="why-stat">
+          <span class="why-stat-num">500</span><span>+</span>
+          <p>Events Catered</p>
+        </div>
+        <div class="why-stat">
+          <span class="why-stat-num">20</span><span>+</span>
+          <p>Menu Items</p>
+        </div>
+        <div class="why-stat">
+          <span class="why-stat-num">98</span><span>%</span>
+          <p>Happy Clients</p>
+        </div>
+        <div class="why-stat">
+          <span class="why-stat-num">15</span><span>+</span>
+          <p>Years of Service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery cream-deco cream-deco-2" id="gallery">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Moments</p>
+        <h2 class="section-title">A Feast for the Eyes</h2>
+        <p class="section-sub">A glimpse into our kitchens, plates and the events we've had the honour of feeding.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="images/menu/fatoush_salad.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/fatoush_salad.jpg" alt="Fatoush salad" />
+        </a>
+        <a href="images/menu/greek_salad.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/greek_salad.jpg" alt="Greek salad" />
+        </a>
+        <a href="images/menu/pumpkin_soup.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/pumpkin_soup.jpg" alt="Pumpkin soup" />
+        </a>
+        <a href="images/menu/alfredo_pasta.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/alfredo_pasta.jpg" alt="Alfredo pasta" />
+        </a>
+        <a href="images/menu/steaks.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/steaks.jpg" alt="Steaks" />
+        </a>
+        <a href="images/menu/mushroom_soup.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/mushroom_soup.jpg" alt="Mushroom soup" />
+        </a>
+        <a href="images/menu/herbal_chicken.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/herbal_chicken.jpg" alt="Herbal chicken" />
+        </a>
+        <a href="images/menu/ceasar_salad.jpg" class="gallery-item">
+          <img loading="lazy" src="images/menu/ceasar_salad.jpg" alt="Ceasar salad" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow light">Kind Words</p>
+        <h2 class="section-title light">From Our Guests</h2>
+      </div>
+
+      <div class="swiper testimonialsSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <figure class="testimonial">
+              <div class="t-stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
+              <blockquote>"Kismath turned our wedding into a culinary memory. The mandi was unreal — guests are still talking about it months later."</blockquote>
+              <figcaption><strong>Layla Al-Hamad</strong><span>Wedding · 350 guests</span></figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial">
+              <div class="t-stars">★ ★ ★ ★ ★</div>
+              <blockquote>"Effortlessly luxurious. From the first call to the final tray, every touchpoint felt premium and personal."</blockquote>
+              <figcaption><strong>Ahmed Karim</strong><span>Corporate Gala</span></figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial">
+              <div class="t-stars">★ ★ ★ ★ ★</div>
+              <blockquote>"The grill station was the highlight of the night. Smoke, spice, and a chef who knew exactly what he was doing."</blockquote>
+              <figcaption><strong>Noura Saleh</strong><span>Private Dinner</span></figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial">
+              <div class="t-stars">★ ★ ★ ★ ★</div>
+              <blockquote>"They customised a vegetarian menu without losing a hint of authenticity. Worth every dirham."</blockquote>
+              <figcaption><strong>Sara Mansour</strong><span>Engagement Party</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact cream-deco" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">Let's Cater Your Event</h2>
+        <p class="contact-lead">Tell us about your day. We'll craft a menu that fits the moment.</p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="ci-icon">📞</span>
+            <div><strong>Call</strong><a href="tel:+966560536908">+966 56 053 6908</a></div>
+          </li>
+          <li>
+            <span class="ci-icon">✉️</span>
+            <div><strong>Email</strong><a href="mailto:kismathcatering.sa@gmail.com">kismathcatering.sa@gmail.com</a></div>
+          </li>
+          <li>
+            <span class="ci-icon">📍</span>
+            <div><strong>Visit</strong><span>Prince Saad St, Al Khobar Al Shamalia, Al Khobar 34427, Saudi Arabia</span></div>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/+966560536908?text=Hello%20Kismath%2C%20I'd%20like%20to%20book%20catering" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.5A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7s1.8 2.8 4.4 3.9c1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.3-.2-.5-.3z"/></svg>
+            Chat on WhatsApp
+        </a>
+
+        <div class="socials">
+          <a href="https://www.instagram.com/kismath.sa?igsh=Y3Mzemh4aW94Nzg5" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/+966560536908" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.5A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7s1.8 2.8 4.4 3.9c1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.3-.2-.5-.3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" method="POST" action="/api/contact" novalidate>
+        <h3>Inquiry Form</h3>
+        <div class="form-row">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" required placeholder="+966 56 053 6908" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Event Type</span>
+            <select name="event" required>
+              <option value="">Select event</option>
+              <option>Wedding</option>
+              <option>Corporate</option>
+              <option>Private Dinner</option>
+              <option>Engagement</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Event Date</span>
+            <input type="date" name="date" required />
+          </label>
+        </div>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell us about guest count, menu preferences, venue..."></textarea>
+        </label>
+        <!-- Honeypot — hidden from humans, bots fill it -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;opacity:0" aria-hidden="true" />
+        <button type="submit" class="btn btn-primary full">Send Inquiry</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="map-wrap">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=26.286032137024456,50.217021971163874&hl=en&z=17&output=embed" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Kismath Indian Cuisine — location"></iframe>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-cream1.png" alt="Kismath Catering" class="logo-img footer-logo-img" />
+        <p>Arabic-fusion catering, crafted to honour every occasion.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+966560536908">+966 56 053 6908</a>
+        <a href="mailto:kismathcatering.sa@gmail.com">kismathcatering.sa@gmail.com</a>
+
+
+        <span>Prince Saad St, Al Khobar Al Shamalia, Al Khobar 34427, Saudi Arabia</span>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/kismath.sa?igsh=Y3Mzemh4aW94Nzg5" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/+966560536908" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Kismath. All rights reserved · Crafted with care.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/+966560536908" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.5A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7s1.8 2.8 4.4 3.9c1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.3-.2-.5-.3z"/></svg>
+  </a>
+
+  <!-- ============ MENU MODAL ============ -->
+  <div class="menu-modal" id="menuModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menuModalTitle">
+    <div class="menu-modal-backdrop"></div>
+    <div class="menu-modal-panel">
+      <button class="menu-modal-close" aria-label="Close menu">&times;</button>
+      <header class="menu-modal-header">
+        <p class="menu-modal-eyebrow">Our Menu</p>
+        <h2 id="menuModalTitle" class="menu-modal-title"></h2>
+        <p class="menu-modal-ar" lang="ar" dir="rtl"></p>
+      </header>
+      <div class="menu-modal-body">
+        <div class="dish-grid" id="dishGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous">&#10094;</button>
+    <button class="lb-next" aria-label="Next">&#10095;</button>
+    <img alt="" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

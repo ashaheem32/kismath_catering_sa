@@ -1,0 +1,17 @@
+{
+  "name": "kismath-catering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kismath Catering — static brand site with a Vercel serverless contact form.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "test-mail": "node scripts/test-mail.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
