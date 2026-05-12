@@ -48,6 +48,8 @@
         { name: 'Fatoush Salad',               img: 'images/menu/fatoush_salad.jpg' },
         { name: 'High Protein Chicken Salad',  img: 'images/menu/high_protein_chicken_salad.jpg' },
         { name: 'Greek Salad',                 img: 'images/menu/greek_salad.jpg' },
+        { name: 'Veggies and Hummus',          img: 'images/menu/veggies_hummus.jpg' },
+        { name: 'Fruits and Berries Bowl',     img: 'images/menu/fruits_berries.jpg' },
       ],
     },
     soups: {
@@ -116,11 +118,10 @@
       title: 'Snacks',
       ar: 'المقبلات',
       dishes: [
-        { name: 'Popcorns',            img: 'images/menu/popcorns.jpg' },
-        { name: 'Veggies and Hummus',  img: 'images/menu/veggies_hummus.jpg' },
-        { name: 'Fruits and Berries',  img: 'images/menu/fruits_berries.jpg' },
-        { name: 'Tiny Burger',         img: 'images/menu/tiny_burger.jpg' },
-        { name: 'Chenna Fatak',        img: 'images/menu/chenna_fatak.jpg' },
+        { name: 'Popcorns',              img: 'images/menu/popcorns.jpg' },
+        { name: 'Yabra (Grape leaves)',  img: 'images/menu/yabra.jpg' },
+        { name: 'Tiny Burger',           img: 'images/menu/tiny_burger.jpg' },
+        { name: 'Chenna Fatak',          img: 'images/menu/chenna_fatak.jpg' },
       ],
     },
   };
