@@ -89,7 +89,7 @@
       ],
     },
     beverages: {
-      title: 'Tea, Coffee & Juices',
+      title: 'Beverages',
       ar: 'شاي، قهوة وعصائر',
       dishes: [
         { name: 'Green Tea',                  img: 'images/menu/green_tea.jpg' },
