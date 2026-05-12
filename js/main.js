@@ -68,6 +68,10 @@
       dishes: [
         { name: 'Mashkool Rice',         img: 'images/menu/mashkool_rice.jpg' },
         { name: 'Chicken Biriyani',      img: 'images/menu/chicken_biriyani.jpg' },
+        { name: 'Beef Biriyani',         img: 'images/menu/beef_biriyani.jpg' },
+        { name: 'Mutton Biriyani',       img: 'images/menu/mutton_biriyani.jpg' },
+        { name: 'Prawns Biriyani',       img: 'images/menu/prawns_biriyani.jpg' },
+        { name: 'Fish Biriyani',         img: 'images/menu/fish_biriyani.jpg' },
         { name: 'Mutton Fry',            img: 'images/menu/mutton_fry_kerala_nadan.jpg' },
         { name: 'Beef Fry',              img: 'images/menu/beef_fry_kerala_ularthiyathu.jpg' },
         { name: 'Pinky Rigatoni Pasta',  img: 'images/menu/pinky_rigatoni_pasta.jpg' },
