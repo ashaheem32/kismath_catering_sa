@@ -89,8 +89,8 @@
       ],
     },
     beverages: {
-      title: 'Tea & Coffee',
-      ar: 'شاي وقهوة',
+      title: 'Tea, Coffee & Juices',
+      ar: 'شاي، قهوة وعصائر',
       dishes: [
         { name: 'Green Tea',                  img: 'images/menu/green_tea.jpg' },
         { name: 'Herbal Tea (Viola Sororia)', img: 'images/menu/herbal_tea.jpg' },
@@ -98,6 +98,14 @@
         { name: 'Black Coffee',               img: 'images/menu/black_coffee.jpg' },
         { name: 'Karak Tea',                  img: 'images/menu/karak_tea.jpg' },
         { name: 'Lemon Tea',                  img: 'images/menu/lemon_tea.jpg' },
+        { name: 'Avocado Honey',              img: 'images/menu/avocado_honey.jpg' },
+        { name: 'ABC Juice',                  img: 'images/menu/abc_juice.jpg' },
+        { name: 'Orange',                     img: 'images/menu/orange_juice.jpg' },
+        { name: 'Mint Lime',                  img: 'images/menu/mint_lime.jpg' },
+        { name: 'Guava',                      img: 'images/menu/guava_juice.jpg' },
+        { name: 'Apple',                      img: 'images/menu/apple_juice.jpg' },
+        { name: 'Sweet Melon',                img: 'images/menu/sweet_melon_juice.jpg' },
+        { name: 'Watermelon',                 img: 'images/menu/watermelon_juice.jpg' },
       ],
     },
     snacks: {
