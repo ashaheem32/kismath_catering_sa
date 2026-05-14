@@ -10,6 +10,24 @@
 // =============================================================
 
 import nodemailer from 'nodemailer';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Load the letterhead background once per cold start.
+// The image already contains the Kismath header and "Thank You" footer,
+// so the email body only needs to render the inquiry details in the middle.
+// Anchored to this file so it resolves the same way under `vercel dev`,
+// the local dev-server, and the deployed serverless function.
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const BG_PATH = path.resolve(__dirname, '..', 'images', 'kismath_email_bg.png');
+let BG_BUFFER = null;
+try {
+  BG_BUFFER = fs.readFileSync(BG_PATH);
+} catch (e) {
+  console.warn('[contact] background image not found at', BG_PATH, '— falling back to plain template');
+}
+const BG_CID = 'kismath-email-bg';
 
 const MAX_LEN = {
   name: 120,
@@ -115,14 +133,37 @@ export default async function handler(req, res) {
 
   // Brand palette
   // cream         #F5F0E8   (page bg)
-  // cream-light   #FBF7EE   (card bg — slightly lighter for contrast)
+  // cream-light   #F8EFDB   (card bg — matches the paper tone in the letterhead)
   // maroon        #7A1B1B   (primary text + accents)
-  // gold          #C9A961   (divider rule, ornament)
+  //
+  // Layout strategy:
+  //   The letterhead PNG (kismath_email_bg.png) is 800×1200 with decorative
+  //   art baked in at the top (Kismath / CATERING / A TASTE OF HERITAGE) and
+  //   bottom (Thank You / KISMATH CATERING · kismath.live). The middle of the
+  //   image is blank cream paper.
+  //
+  //   Instead of using the image as one fixed-height full-bleed background
+  //   (which makes a long Message overlap the footer art), the card is split
+  //   into three rows:
+  //
+  //     1) Top band  — fixed 240px, background-position:top    crops to header
+  //     2) Middle    — flexible height, plain cream paper, holds all content
+  //     3) Bottom band — fixed 200px, background-position:bottom crops to footer
+  //
+  //   The same source image is used for both bands, just positioned to expose
+  //   only the relevant slice of the 900px-tall scaled image (600×900).
+  const bgUrl = BG_BUFFER ? `cid:${BG_CID}` : null;
   const row = (label, value) => `
     <tr>
-      <td style="padding:14px 0;width:96px;color:rgba(122,27,27,0.55);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-family:'Helvetica Neue',Arial,sans-serif;vertical-align:top;border-bottom:1px solid rgba(122,27,27,0.08);">${label}</td>
-      <td style="padding:14px 0;font-size:16px;color:#7A1B1B;font-family:Georgia,'Times New Roman',serif;border-bottom:1px solid rgba(122,27,27,0.08);">${value}</td>
+      <td style="padding:12px 0;width:88px;color:rgba(122,27,27,0.6);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-family:'Helvetica Neue',Arial,sans-serif;vertical-align:top;border-bottom:1px solid rgba(122,27,27,0.10);">${label}</td>
+      <td style="padding:12px 0;font-size:15px;color:#7A1B1B;font-family:Georgia,'Times New Roman',serif;border-bottom:1px solid rgba(122,27,27,0.10);">${value}</td>
     </tr>`;
+
+  const bandStyle = (position) =>
+    bgUrl
+      ? `background-color:#F8EFDB;background-image:url('${bgUrl}');background-repeat:no-repeat;background-position:${position} center;background-size:600px 900px;`
+      : `background-color:#F8EFDB;`;
+  const bandAttr = bgUrl ? `background="${bgUrl}" ` : '';
 
   const html = `
     <div style="margin:0;padding:0;background:#F5F0E8;font-family:Georgia,'Times New Roman',serif;">
@@ -130,34 +171,20 @@ export default async function handler(req, res) {
         <tr>
           <td align="center" style="padding:36px 12px;">
 
-            <!-- Card -->
+            <!-- Card: three rows so content can grow without overlapping artwork -->
             <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
-                   style="border-collapse:collapse;background:#FBF7EE;border:1px solid rgba(122,27,27,0.12);max-width:600px;width:100%;">
+                   style="border-collapse:collapse;background:#F8EFDB;max-width:600px;width:100%;">
 
-              <!-- Top maroon accent bar -->
-              <tr><td style="background:#7A1B1B;height:6px;line-height:6px;font-size:0;">&nbsp;</td></tr>
-
-              <!-- Header -->
+              <!-- Top band — header artwork (crops the image to its top 240px) -->
               <tr>
-                <td style="padding:48px 56px 8px;text-align:center;">
-                  <p style="margin:0 0 6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(122,27,27,0.6);">Kismath Catering</p>
-                  <h1 style="margin:6px 0 0;font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:28px;color:#7A1B1B;letter-spacing:0.3px;">New Catering Inquiry</h1>
-                  <!-- Gold ornament rule -->
-                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:18px auto 0;">
-                    <tr>
-                      <td style="width:40px;height:1px;background:#C9A961;font-size:0;line-height:0;">&nbsp;</td>
-                      <td style="padding:0 10px;color:#C9A961;font-size:14px;font-family:Georgia,serif;">&#10022;</td>
-                      <td style="width:40px;height:1px;background:#C9A961;font-size:0;line-height:0;">&nbsp;</td>
-                    </tr>
-                  </table>
-                  <p style="margin:18px 0 0;font-style:italic;color:rgba(122,27,27,0.65);font-size:14px;">A new guest has reached out from your website.</p>
-                </td>
+                <td ${bandAttr}width="600" height="240" style="height:240px;line-height:240px;font-size:0;${bandStyle('top')}">&nbsp;</td>
               </tr>
 
-              <!-- Details -->
+              <!-- Middle band — flexible cream paper, holds all inquiry content -->
               <tr>
-                <td style="padding:28px 56px 8px;">
+                <td style="background:#F8EFDB;padding:8px 72px 24px;">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+                    ${row('Message', `<span style="white-space:pre-wrap;word-wrap:break-word;overflow-wrap:break-word;">${esc(fields.message) || '<em style="color:rgba(122,27,27,0.45)">No message provided.</em>'}</span>`)}
                     ${row('Name',  `<strong style="font-weight:600;">${esc(fields.name)}</strong>`)}
                     ${row('Phone', `<a href="tel:${esc(fields.phone)}" style="color:#7A1B1B;text-decoration:none;border-bottom:1px dotted rgba(122,27,27,0.4);">${esc(fields.phone)}</a>`)}
                     ${row('Event', esc(fields.event) || '<span style="color:rgba(122,27,27,0.4)">&mdash;</span>')}
@@ -166,26 +193,9 @@ export default async function handler(req, res) {
                 </td>
               </tr>
 
-              <!-- Message -->
+              <!-- Bottom band — footer artwork (crops the image to its bottom 200px) -->
               <tr>
-                <td style="padding:24px 56px 8px;">
-                  <p style="margin:0 0 10px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(122,27,27,0.55);">Message</p>
-                  <div style="background:#F5F0E8;border-left:3px solid #C9A961;padding:18px 22px;font-size:15px;line-height:1.75;color:#7A1B1B;font-family:Georgia,'Times New Roman',serif;white-space:pre-wrap;">${esc(fields.message) || '<em style="color:rgba(122,27,27,0.45)">No message provided.</em>'}</div>
-                </td>
-              </tr>
-
-              <!-- Footer -->
-              <tr>
-                <td style="padding:36px 56px 44px;text-align:center;">
-                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 16px;">
-                    <tr>
-                      <td style="width:30px;height:1px;background:rgba(122,27,27,0.25);font-size:0;line-height:0;">&nbsp;</td>
-                      <td style="padding:0 10px;color:rgba(122,27,27,0.35);font-size:11px;">&bull;</td>
-                      <td style="width:30px;height:1px;background:rgba(122,27,27,0.25);font-size:0;line-height:0;">&nbsp;</td>
-                    </tr>
-                  </table>
-                  <p style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(122,27,27,0.45);">Sent from kismath.sa &middot; Reply directly to respond</p>
-                </td>
+                <td ${bandAttr}width="600" height="200" style="height:200px;line-height:200px;font-size:0;${bandStyle('bottom')}">&nbsp;</td>
               </tr>
 
             </table>
@@ -205,6 +215,17 @@ export default async function handler(req, res) {
       subject: `New catering inquiry — ${fields.name}`,
       text,
       html,
+      attachments: BG_BUFFER
+        ? [
+            {
+              filename: 'kismath_email_bg.png',
+              content: BG_BUFFER,
+              cid: BG_CID,
+              contentType: 'image/png',
+              contentDisposition: 'inline',
+            },
+          ]
+        : [],
     });
     console.log('[contact] sent', info.messageId, 'to', TO_EMAIL);
     return res.status(200).json({ ok: true });

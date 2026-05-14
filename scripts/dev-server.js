@@ -119,7 +119,9 @@ const server = http.createServer(async (req, res) => {
       req.body = await readJsonBody(req);
     }
     try {
-      const { default: handler } = await import('../api/contact.js');
+      // Cache-bust so edits to api/contact.js take effect without restarting
+      // the dev server (Node's ESM loader caches by URL).
+      const { default: handler } = await import(`../api/contact.js?t=${Date.now()}`);
       return handler(req, res);
     } catch (e) {
       console.error('handler error', e);

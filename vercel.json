@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/contact.js": {
+      "includeFiles": "images/kismath_email_bg.png"
+    }
+  }
+}
